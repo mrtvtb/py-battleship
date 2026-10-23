@@ -47,6 +47,8 @@ class Battleship:
         for ship in ships:
             self.field[ship] = Ship(ship[0], ship[1])
 
+        self._validate_field()
+
     def fire(self, location: tuple) -> str:
         for ship in self.field.values():
             deck = ship.get_deck(location[0], location[1])
